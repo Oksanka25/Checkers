@@ -20,7 +20,7 @@ html {
     background-color: #7abc9f;
 }
 
-.board {
+#board {
     position: relative;
     width: 641px;
     height: 641px;
