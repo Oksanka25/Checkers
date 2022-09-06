@@ -24,10 +24,12 @@ The layout is a checkers board and score tracking table.
 
 ## MVP Goals
 
-- Have a button Start that lays all checkers on the board.
+- Have a button Start that shows all checkers on the board.
 - Ability for each to user to move their checkers to the allowed tiles.
 - Block users from moving opponent's checkers.
-- 
+- Check for the winner when one of the players don't have any moves or checkers left.
+- Keep track the winning score for the players.
+- Show messages about allowed/forbidden moves and winning state. 
 
 ## Stretch Goals
 
