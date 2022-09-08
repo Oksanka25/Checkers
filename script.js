@@ -1,8 +1,5 @@
 // DOM variables
-let board = document.getElementById('board');
-let square = document.getElementsByClassName('square');
-let yellowChecker = document.getElementsByClassName('yellow_checker');
-let blueChecker = document.getElementsByClassName('blue_checker')
-
-
-// Game variables
+let yellowTurn = document.querySelector('.yellowTurn');
+let blueTurn = document.querySelector('.blueTurn');
+let player1 = document.querySelectorAll('.player1');
+let player2 = document.querySelectorAll('.player2');

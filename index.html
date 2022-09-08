@@ -11,43 +11,18 @@
 </head>
 
 <body>
-    <div class="context">
-        <div class="player1"> Player 1: </div>
-        <div class="message"> </div>
-        <div class="player2"> Player 2: </div>
-        <button class="start"> Start Game</button>
-        <button class="reset"> Reset Game</button>
+    <div class='header'>
+        <h1>Checkers</h1>
+        <p id="player1text">Player 1 Checkers Left: <span id='p1checkers'>12</span></p>
+        <p id="player2text">Player 2 Checkers Left: <span id='p2checkers'>12</span></p>
+    </div>
+    <div class="playerTurn">
+        <div class="blueTurn"></div>
+        <div class="yellowTurn"></div>
     </div>
 
     <div id="board">
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
-        <div class="checker yellow-checker"> </div>
 
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-        <div class="checker blue-checker"> </div>
-
-
-        <div class="square dark-tile"> </div>
         <div class="square light-tile"> </div>
         <div class="square dark-tile"> </div>
         <div class="square light-tile"> </div>
@@ -55,6 +30,7 @@
         <div class="square light-tile"> </div>
         <div class="square dark-tile"> </div>
         <div class="square light-tile"> </div>
+        <div class="square dark-tile"> </div>
         <div class="clear_float"> </div>
 
         <div class="square light-tile"> </div>
@@ -86,27 +62,7 @@
         <div class="square light-tile"> </div>
         <div class="square dark-tile"> </div>
 
-        <hr style="margin: 0em" , size="1" , color="rgb(118, 117, 117)">
 
-
-        <div class="square dark-tile"> </div>
-        <div class="square light-tile"> </div>
-        <div class="square dark-tile"> </div>
-        <div class="square light-tile"> </div>
-        <div class="square dark-tile"> </div>
-        <div class="square light-tile"> </div>
-        <div class="square dark-tile"> </div>
-        <div class="square light-tile"> </div>
-
-
-        <div class="square light-tile"> </div>
-        <div class="square dark-tile"> </div>
-        <div class="square light-tile"> </div>
-        <div class="square dark-tile"> </div>
-        <div class="square light-tile"> </div>
-        <div class="square dark-tile"> </div>
-        <div class="square light-tile"> </div>
-        <div class="square dark-tile"> </div>
 
 
         <div class="square dark-tile"> </div>
@@ -128,6 +84,100 @@
         <div class="square light-tile"> </div>
         <div class="square dark-tile"> </div>
 
+
+        <div class="square dark-tile"> </div>
+        <div class="square light-tile"> </div>
+        <div class="square dark-tile"> </div>
+        <div class="square light-tile"> </div>
+        <div class="square dark-tile"> </div>
+        <div class="square light-tile"> </div>
+        <div class="square dark-tile"> </div>
+        <div class="square light-tile"> </div>
+
+
+        <div class="square light-tile"> </div>
+        <div class="square dark-tile"> </div>
+        <div class="square light-tile"> </div>
+        <div class="square dark-tile"> </div>
+        <div class="square light-tile"> </div>
+        <div class="square dark-tile"> </div>
+        <div class="square light-tile"> </div>
+        <div class="square dark-tile"> </div>
+
+    </div>
+
+    <div class="board">
+        <div class="square light tile" id="a8"> 1</div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="b8"> 2</div>
+        <div class="square light tile" id="c8"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="d8"></div>
+        <div class="square light tile" id="e8"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="f8"></div>
+        <div class="square light tile" id="g8"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="h8"></div>
+
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="a7"></div>
+        <div class="square light tile" id="b7"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="c7"></div>
+        <div class="square light tile" id="d7"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="e7"></div>
+        <div class="square light tile" id="f7"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="g7"></div>
+        <div class="square light tile" id="h7"></div>
+
+        <div class="square light tile" id="a6"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="b6"></div>
+        <div class="square light tile" id="c6"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="d6"></div>
+        <div class="square light tile" id="e6"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="f6"></div>
+        <div class="square light tile" id="g6"></div>
+        <div class="square dark tile player2" ondragover="onDragOver(event)" ondrop="drop(event)" id="h6"></div>
+
+        <div class="dark tile" ondragover="onDragOver(event)" ondrop="drop(event)" id="a5"></div>
+        <div class="square light tile" id="b5"></div>
+        <div class="dark tile" ondragover="onDragOver(event)" ondrop="drop(event)" id="c5"></div>
+        <div class="square light tile" id="d5"></div>
+        <div class="dark tile" ondragover="onDragOver(event)" ondrop="drop(event)" id="e5"></div>
+        <div class="square light tile" id="f5"></div>
+        <div class="dark tile" ondragover="onDragOver(event)" ondrop="drop(event)" id="g5"></div>
+        <div class="square light tile" id="h5"></div>
+
+        <div class="square light tile" id="a4">9</div>
+        <div class="dark tile" ondragover="onDragOver(event)" ondrop="drop(event)" id="b4"></div>
+        <div class="square light tile" id="c4"></div>
+        <div class="dark tile" ondragover="onDragOver(event)" ondrop="drop(event)" id="d4"></div>
+        <div class="square light tile" id="e4"></div>
+        <div class="dark tile" ondragover="onDragOver(event)" ondrop="drop(event)" id="f4"></div>
+        <div class="square light tile" id="g4"></div>
+        <div class="dark tile" ondragover="onDragOver(event)" ondrop="drop(event)" id="h4"></div>
+
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="a3"> 4</div>
+        <div class="square light tile" id="b3">5</div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="c3"></div>
+        <div class="square light tile" id="d3"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="e3"></div>
+        <div class="square light tile" id="f3"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="g3"></div>
+        <div class="square light tile" id="h3"></div>
+
+        <div class="square light tile" id="a2"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="b2"></div>
+        <div class="square light tile" id="c2"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="d2"></div>
+        <div class="square light tile" id="e2"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="f2"></div>
+        <div class="square light tile" id="g2"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="h2"></div>
+
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="a1"></div>
+        <div class="square light tile" id="b1"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="c1"></div>
+        <div class="square light tile" id="d1"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="e1"></div>
+        <div class="square light tile" id="f1"></div>
+        <div class="square dark tile player1" ondragover="onDragOver(event)" ondrop="drop(event)" id="g1"></div>
+        <div class="square light tile" id="h1"></div>
     </div>
 
 
