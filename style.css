@@ -1,78 +1,22 @@
-body,
-html {
+body {
+    background-image: url("https://wallpaperaccess.com/full/279547.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-right: 200px;
+    display: grid;
+    grid-template-rows: 200px 1fr 200px;
+    grid-template-columns: 200px 1fr 200px;
+    justify-content: center;
+    justify-items: center;
+}
+
+.play-field {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-row: 2;
+    grid-column: 2;
     width: 100%;
-    height: 100%;
-    margin: 0 0;
-    padding: 0 0;
-}
-
-.square {
-    float: right;
-    width: 80px;
-    height: 80px;
-}
-
-.dark-tile {
-    background-color: #468274;
-}
-
-.light-tile {
-    background-color: #7abc9f;
-}
-
-#board {
     position: relative;
-    width: 641px;
-    height: 641px;
-    margin: 0 auto;
-    border: 3px solid olivedrab;
-}
-
-.checker {
-    top: 9px;
-    left: 9px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    position: absolute;
-    border: 1px solid white;
-    cursor: pointer;
-
-}
-
-.yellow-checker {
-    background: #eede30;
-    transition: 0.3s ease-in-out;
-}
-
-.blue-checker {
-    background: #219ce3;
-    transition: 0.3s ease-in-out;
-}
-
-.black_background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 7;
-    display: none;
-}
-
-@media only screen and (max-width : 640px) {
-    .board {
-        width: 400px;
-        height: 400px;
-    }
-
-    .square {
-        width: 50px;
-        height: 50px;
-    }
-
-    .checker {
-        width: 35px;
-        height: 35px;
-    }
+    box-shadow: 5px 10px 10px 5px black;
 }
