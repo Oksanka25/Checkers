@@ -5,6 +5,8 @@ let player1 = document.querySelectorAll('.player1');
 let player2 = document.querySelectorAll('.player2');
 let player1count = document.getElementById('p1checkers');
 let player2count = document.getElementById('p2checkers')
+let p1text = document.getElementById('player1text');
+let p2text = document.getElementById('player2text');
 
 
 // Global variables
@@ -22,6 +24,8 @@ let p1checkers = 12;
 let p2checkers = 12;
 let multiJump = false;
 let kingStr = '';
+let p1Wins = 0;
+let p2Wins = 0;
 
 let moveSound = new Howl({
     src: ['/sound/move.wav'],
@@ -136,7 +140,6 @@ function drop(event) {
             tile.style.filter = "brightness(100%)";
         });
         turnToggle();
-
     }
     moveSound.play()
 }
@@ -215,15 +218,17 @@ function findAndRemove(startPosition, endPosition) {
     document.getElementById('p1checkers').innerText = p1checkers;
     document.getElementById('p2checkers').innerText = p2checkers;
     if (p1checkers === 0) {
+        scoreB();
         const newPrgrph = document.createElement('p');
         newPrgrph.id = 'winner';
-        const textNode = document.createTextNode('Player 2 (Y) Wins!');
+        const textNode = document.createTextNode('Player 2 (B) Wins!');
         newPrgrph.appendChild(textNode);
         document.body.appendChild(newPrgrph);
     } else if (p2checkers === 0) {
+        scoreY()
         const newPrgrph = document.createElement('p');
         newPrgrph.id = 'winner';
-        const textNode = document.createTextNode('Player 1 (B) Wins!');
+        const textNode = document.createTextNode('Player 1 (Y) Wins!');
         newPrgrph.appendChild(textNode);
         document.body.appendChild(newPrgrph);
     }
@@ -512,4 +517,14 @@ function multiJumpAvailableMove(startPosition, kingStr) {
         return false;
     }
 
+}
+
+function scoreY() {
+    p1Wins++;
+    p1text.innerHTML = p1Wins;
+}
+
+function scoreB() {
+    p2Wins++;
+    p2text.innerHTML = p2Wins;
 }
