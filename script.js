@@ -58,6 +58,8 @@ function startGame() {
 
 function resetGame() {
     const playerPieces = document.querySelectorAll('.player1Pieces,.player2Pieces');
+    yellowTurn.style.visibility = 'visible';
+    blueTurn.style.visibility = 'visible';
     multiJump = false;
     playerPieces.forEach(piece => {
         piece.setAttribute('draggable', 'true');
@@ -377,4 +379,133 @@ function turnToggle() {
         yellowTurn.style.visibility = 'visible';
         blueTurn.style.visibility = 'hidden';
     }
+}
+
+function multiJumpAvailableMove(startPosition, kingStr) {
+    let multiMoveOption1 = '';
+    let multiMoveOption2 = '';
+    let multiMoveOption3 = '';
+    let multiMoveOption4 = '';
+
+    let startChar = startPosition[0];
+
+    let nextLetter = String.fromCharCode(startChar.charCodeAt(0) + 1);
+    let prevLetter = String.fromCharCode(startChar.charCodeAt(0) - 1);
+    let nextNum = parseInt(startPosition[1], 10) + 1;
+    let prevNum = parseInt(startPosition[1], 10) - 1;
+
+    if (currentPlayer === 'player1Pieces' || kingStr === 'king') {
+        multiMoveOption1 = nextLetter + nextNum;
+        if (lettersArr.includes(multiMoveOption1[0]) && numArr.includes(multiMoveOption1[1])) {
+            if (obstructionCheck(multiMoveOption1)) {
+                if (document.getElementById(multiMoveOption1).lastChild.className === currentPlayer) {
+                    multiMoveOption1 = '';
+                } else {
+                    let nextLetter = String.fromCharCode(multiMoveOption1.charCodeAt(0) + 1);
+                    let nextNum = parseInt(multiMoveOption1[1], 10) + 1;
+                    multiMoveOption1 = nextLetter + nextNum;
+                    if (lettersArr.includes(multiMoveOption1[0]) && numArr.includes(multiMoveOption1[1])) {
+                        if (obstructionCheck(multiMoveOption1)) {
+                            multiMoveOption1 = '';
+                        }
+                    }
+                }
+            } else {
+                multiMoveOption1 = '';
+            }
+        } else {
+            multiMoveOption1 = '';
+        }
+    }
+
+    if (currentPlayer === 'player1Pieces' || kingStr === 'king') {
+        multiMoveOption2 = prevLetter + nextNum;
+        if (lettersArr.includes(multiMoveOption2[0]) && numArr.includes(multiMoveOption2[1])) {
+            if (obstructionCheck(multiMoveOption2)) {
+                if (document.getElementById(multiMoveOption2).lastChild.className === currentPlayer) {
+                    multiMoveOption2 = '';
+                } else {
+                    let prevLetter = String.fromCharCode(multiMoveOption2.charCodeAt(0) - 1);
+                    let nextNum = parseInt(multiMoveOption2[1], 10) + 1;
+                    multiMoveOption2 = prevLetter + nextNum;
+                    if (lettersArr.includes(multiMoveOption2[0]) && numArr.includes(multiMoveOption2[1])) {
+                        if (obstructionCheck(multiMoveOption2)) {
+                            multiMoveOption2 = '';
+                        }
+                    }
+                }
+            } else {
+                multiMoveOption2 = '';
+            }
+        } else {
+            multiMoveOption2 = '';
+        }
+    }
+
+    if (currentPlayer === 'player2Pieces' || kingStr === 'king') {
+        multiMoveOption3 = nextLetter + prevNum;
+        if (lettersArr.includes(multiMoveOption3[0]) && numArr.includes(multiMoveOption3[1])) {
+            if (obstructionCheck(multiMoveOption3)) {
+                if (document.getElementById(multiMoveOption3).lastChild.className === currentPlayer) {
+                    multiMoveOption3 = '';
+                } else {
+                    let nextLetter = String.fromCharCode(multiMoveOption3.charCodeAt(0) + 1);
+                    let prevNum = parseInt(multiMoveOption3[1], 10) - 1;
+                    multiMoveOption3 = nextLetter + prevNum;
+                    if (lettersArr.includes(multiMoveOption3[0]) && numArr.includes(multiMoveOption3[1])) {
+                        if (obstructionCheck(multiMoveOption3)) {
+                            multiMoveOption3 = '';
+                        }
+                    }
+                }
+            } else {
+                multiMoveOption3 = '';
+            }
+        } else {
+            multiMoveOption3 = '';
+        }
+    }
+
+    if (currentPlayer === 'player2Pieces' || kingStr === 'king') {
+        multiMoveOption4 = prevLetter + prevNum;
+        if (lettersArr.includes(multiMoveOption4[0]) && numArr.includes(multiMoveOption4[1])) {
+            if (obstructionCheck(multiMoveOption4)) {
+                if (document.getElementById(multiMoveOption4).lastChild.className === currentPlayer) {
+                    multiMoveOption4 = '';
+                } else {
+                    let prevLetter = String.fromCharCode(multiMoveOption4.charCodeAt(0) - 1);
+                    let prevNum = parseInt(multiMoveOption4[1], 10) - 1;
+                    multiMoveOption4 = prevLetter + prevNum;
+                    if (lettersArr.includes(multiMoveOption4[0]) && numArr.includes(multiMoveOption4[1])) {
+                        if (obstructionCheck(multiMoveOption4)) {
+                            multiMoveOption4 = '';
+                        }
+                    }
+                }
+            } else {
+                multiMoveOption4 = '';
+            }
+        } else {
+            multiMoveOption4 = '';
+        }
+    }
+
+    if (lettersArr.includes(multiMoveOption1[0])) {
+        document.getElementById(multiMoveOption1).style.filter = "brightness(400%)";
+    }
+    if (lettersArr.includes(multiMoveOption2[0])) {
+        document.getElementById(multiMoveOption2).style.filter = "brightness(400%)";
+    }
+    if (lettersArr.includes(multiMoveOption3[0])) {
+        document.getElementById(multiMoveOption3).style.filter = "brightness(400%)";
+    }
+    if (lettersArr.includes(multiMoveOption4[0])) {
+        document.getElementById(multiMoveOption4).style.filter = "brightness(400%)";
+    }
+    if (multiMoveOption1 !== '' || multiMoveOption2 !== '' || multiMoveOption3 !== '' || multiMoveOption4 !== '') {
+        return true;
+    } else {
+        return false;
+    }
+
 }

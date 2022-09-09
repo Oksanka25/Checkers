@@ -182,3 +182,29 @@ button {
     grid-column: 2;
     margin: auto;
 }
+
+#p2checkers,
+#p1checkers {
+    font-size: 45px;
+    color: rgb(83, 195, 70);
+    font-weight: bold;
+}
+
+#winner {
+    font-size: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+    position: absolute;
+    width: 700px;
+    height: 300px;
+    top: 350px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px black;
+}
+
+.king {
+    border: 7px solid rgb(211, 95, 32);
+    border-radius: 50%;
+}
