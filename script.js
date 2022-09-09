@@ -76,7 +76,7 @@ function resetGame() {
 }
 
 
-// Grabbing the start place of the player's checker 'upon 'picking up' a piece. e.g. B3 or E4. 
+// Grabbing the start-place of the player's checker 'upon 'picking up' a piece. e.g. b3
 function dragStart(event) {
     kingStr = '';
     event.dataTransfer.setData("text", event.target.id);
@@ -89,3 +89,40 @@ function dragStart(event) {
     availableMove(startPosition, kingStr);
 }
 
+// Grabbing the end-place of the player's checker upon 'dropping'e.g. a4
+function drop(event) {
+    let data = event.dataTransfer.getData("text");
+    endPosition = event.path[0].id;
+
+    if (document.getElementById(data).className === 'player1Pieces') {
+        if (endPosition[1] === '8') {
+            const kingPiece = document.getElementById(data);
+            kingPiece.className += ' king';
+        }
+    }
+    if (document.getElementById(data).className === 'player2Pieces') {
+        if (endPosition[1] === '1') {
+            const kingPiece = document.getElementById(data);
+            kingPiece.className += ' king';
+        }
+    }
+
+    if (endPosition === moveOption1 || endPosition === moveOption2 || endPosition === moveOption3 || endPosition === moveOption4) {
+        event.target.appendChild(document.getElementById(data));
+        if (jumpCheck(startPosition, endPosition)) {
+            findAndRemove(startPosition, endPosition);
+            multiJump = multiJumpAvailableMove(endPosition, kingStr);
+            console.log(multiJump);
+            if (multiJump) {
+                turnToggle();
+            }
+        };
+
+        const brightnessClear = document.querySelectorAll('.dark');
+        brightnessClear.forEach(tile => {
+            tile.style.filter = "brightness(100%)";
+        });
+        turnToggle();
+
+    }
+}
