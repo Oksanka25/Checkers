@@ -32,6 +32,11 @@ let moveSound = new Howl({
     volume: .5
 });
 
+let winSound = new Howl({
+    src: ['/sound/game-win-sound-effect.mp3'],
+    volume: .5
+});
+
 
 
 
@@ -219,13 +224,15 @@ function findAndRemove(startPosition, endPosition) {
     document.getElementById('p2checkers').innerText = p2checkers;
     if (p1checkers === 0) {
         scoreB();
+        winSound.play();
         const newPrgrph = document.createElement('p');
         newPrgrph.id = 'winner';
         const textNode = document.createTextNode('Player 2 (B) Wins!');
         newPrgrph.appendChild(textNode);
         document.body.appendChild(newPrgrph);
     } else if (p2checkers === 0) {
-        scoreY()
+        scoreY();
+        winSound.play();
         const newPrgrph = document.createElement('p');
         newPrgrph.id = 'winner';
         const textNode = document.createTextNode('Player 1 (Y) Wins!');
