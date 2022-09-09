@@ -13,7 +13,10 @@ let startPosition = '';
 const lettersArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 const numArr = ['1', '2', '3', '4', '5', '6', '7', '8'];
 let jumpPosition = '';
-
+let moveOption1 = '';
+let moveOption2 = '';
+let moveOption3 = '';
+let moveOption4 = '';
 let currentPlayer = 'player1Pieces';
 let p1checkers = 12;
 let p2checkers = 12;
