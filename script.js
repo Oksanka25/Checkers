@@ -3,6 +3,8 @@ let yellowTurn = document.querySelector('.yellowTurn');
 let blueTurn = document.querySelector('.blueTurn');
 let player1 = document.querySelectorAll('.player1');
 let player2 = document.querySelectorAll('.player2');
+let player1count = document.getElementById('p1checkers');
+let player2count = document.getElementById('p2checkers')
 
 
 // Global variables
@@ -18,6 +20,10 @@ let p2checkers = 12;
 let multiJump = false;
 let kingStr = '';
 
+
+
+
+// Creating checkers (pieces) for each player with unique ids and classes, adding dragging attributes
 function startGame() {
     let i = 0;
     multiJump = false;
@@ -43,4 +49,28 @@ function startGame() {
         tile.appendChild(player2Piece);
         i++;
     });
+}
+
+// Removing both players' checkers from the board / clearing the board
+
+function resetGame() {
+    const playerPieces = document.querySelectorAll('.player1Pieces,.player2Pieces');
+    multiJump = false;
+    playerPieces.forEach(piece => {
+        piece.setAttribute('draggable', 'true');
+        piece.remove();
+        i = 0;
+    });
+    currentPlayer = 'player1Pieces';
+    // p1checkers = 12;
+    // p2checkers = 12;
+    player1count.innerText = 12;
+    player2count.innerText = 12;
+    if (document.getElementById('winner') !== null) {
+        document.getElementById('winner').innerText = '';
+    }
+    const brightnessClear = document.querySelectorAll('.dark');
+    brightnessClear.forEach(tile => {
+        tile.style.filter = "brightness(100%)";
+    })
 }
