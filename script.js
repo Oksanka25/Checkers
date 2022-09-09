@@ -127,6 +127,83 @@ function drop(event) {
     }
 }
 
+// Finds the tile between starting/ending position, then removes child if it exists.
+function findAndRemove(startPosition, endPosition) {
+    jumpPosition = "";
+    let startCharIndex = lettersArr.indexOf(startPosition[0]);
+    let endCharIndex = lettersArr.indexOf(endPosition[0]);
+    let whichPlayerToReduce = '';
+    // up-right 
+    if (endCharIndex > startCharIndex && endPosition[1] > startPosition[1]) {
+        jumpPosition += lettersArr[endCharIndex - 1];
+        jumpPosition += (endPosition[1] - 1);
+        let unknownPiece = document.getElementById(`${jumpPosition}`);
+
+        if (unknownPiece.lastChild.className === 'player1Pieces') {
+            p1checkers--;
+        } else {
+            p2checkers--;
+        }
+        if (unknownPiece.lastElementChild !== null) {
+            unknownPiece.removeChild(unknownPiece.lastElementChild);
+        }
+        // down-right 
+    } else if (endCharIndex > startCharIndex && endPosition[1] < startPosition[1]) {
+        jumpPosition += lettersArr[endCharIndex - 1];
+        jumpPosition += (parseInt(endPosition[1], 10) + 1);
+        let unknownPiece = document.getElementById(`${jumpPosition}`);
+        if (unknownPiece.lastChild.className === 'player1Pieces') {
+            p1checkers--;
+        } else {
+            p2checkers--;
+        }
+        if (unknownPiece.lastElementChild !== null) {
+            unknownPiece.removeChild(unknownPiece.lastElementChild);
+        }
+        // up-left 
+    } else if (endCharIndex < startCharIndex && endPosition[1] > startPosition[1]) {
+        jumpPosition += lettersArr[endCharIndex + 1];
+        jumpPosition += (endPosition[1] - 1);
+        let unknownPiece = document.getElementById(`${jumpPosition}`);
+        if (unknownPiece.lastChild.className === 'player1Pieces') {
+            p1checkers--;
+        } else {
+            p2checkers--;
+        }
+        if (unknownPiece.lastElementChild !== null) {
+            unknownPiece.removeChild(unknownPiece.lastElementChild);
+        }
+        // down-left 
+    } else if (endCharIndex < startCharIndex && endPosition[1] < startPosition[1]) {
+        jumpPosition += lettersArr[endCharIndex + 1];
+        jumpPosition += (parseInt(endPosition[1], 10) + 1);
+        let unknownPiece = document.getElementById(`${jumpPosition}`);
+        if (unknownPiece.lastChild.className === 'player1Pieces') {
+            p1checkers--;
+        } else {
+            p2checkers--;
+        }
+        if (unknownPiece.lastElementChild !== null) {
+            unknownPiece.removeChild(unknownPiece.lastElementChild);
+        }
+    }
+    document.getElementById('p1checkers').innerText = p1checkers;
+    document.getElementById('p2checkers').innerText = p2checkers;
+    if (p1checkers === 0) {
+        const newPrgrph = document.createElement('p');
+        newPrgrph.id = 'winner';
+        const textNode = document.createTextNode('Player 2 (Y) Wins!');
+        newPrgrph.appendChild(textNode);
+        document.body.appendChild(newPrgrph);
+    } else if (p2checkers === 0) {
+        const newPrgrph = document.createElement('p');
+        newPrgrph.id = 'winner';
+        const textNode = document.createTextNode('Player 1 (B) Wins!');
+        newPrgrph.appendChild(textNode);
+        document.body.appendChild(newPrgrph);
+    }
+}
+
 function availableMove(startPosition, kingStr) {
     moveOption1 = '';
     moveOption2 = '';
