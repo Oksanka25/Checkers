@@ -14,17 +14,17 @@ h1 {
     display: grid;
     grid-row: 1;
     grid-column: 2;
-    font-size: 80px;
     margin: auto;
+    font-size: 83px;
 }
 
 button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100px;
     height: 50px;
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -87,4 +87,53 @@ button {
     background-size: 100px;
     overflow: hidden;
     background-position: center;
+}
+
+
+
+#player10,
+#player11,
+#player12,
+#player13,
+#player14,
+#player15,
+#player16,
+#player17,
+#player18,
+#player19,
+#player110,
+#player111 {
+    position: absolute;
+    display: grid;
+    background-color: rgb(239, 239, 55);
+    background-size: cover;
+    box-shadow: 1px 2px 1px 1px;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#player20,
+#player21,
+#player22,
+#player23,
+#player24,
+#player25,
+#player26,
+#player27,
+#player28,
+#player29,
+#player210,
+#player211 {
+    position: absolute;
+    display: grid;
+    background-color: rgb(102, 206, 247);
+    background-size: cover;
+    box-shadow: 2px 2px 2px 1px;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    cursor: pointer;
+
 }
