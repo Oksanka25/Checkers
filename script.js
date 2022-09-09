@@ -89,11 +89,16 @@ function dragStart(event) {
     availableMove(startPosition, kingStr);
 }
 
+// ondragover is a built in method that executes JavaScript when element is being dragged over a drop target. Setting preventDefault, to avoid unintended actions
+function onDragOver(event) {
+    event.preventDefault();
+}
+
 // Grabbing the end-place of the player's checker upon 'dropping' e.g. a4
 function drop(event) {
+    event.preventDefault();
     let data = event.dataTransfer.getData("text");
     endPosition = event.path[0].id;
-
     if (document.getElementById(data).className === 'player1Pieces') {
         if (endPosition[1] === '8') {
             const kingPiece = document.getElementById(data);
@@ -124,6 +129,17 @@ function drop(event) {
         });
         turnToggle();
 
+    }
+}
+
+//Checks to see if a move was 1 diagonal length, or 2. The latter yielding a jump condition
+//the Math.abs() function returns the absolute value of a number.
+function jumpCheck(startPosition, endPosition) {
+    let difference = Math.abs(endPosition[1] - startPosition[1]);
+    if (difference > 1) {
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -325,5 +341,37 @@ function obstructionCheck(moveOption) {
         return true;
     } else {
         return false;
+    }
+}
+
+function turnToggle() {
+    if (currentPlayer === 'player1Pieces') {
+        currentPlayer = 'player2Pieces';
+        const player1Pieces = document.querySelectorAll('.player1Pieces');
+        player1Pieces.forEach((piece) => {
+            piece.setAttribute('draggable', 'false');
+        });
+        const player2Pieces = document.querySelectorAll('.player2Pieces');
+        player2Pieces.forEach((piece) => {
+            piece.setAttribute('draggable', 'true');
+        });
+
+        yellowTurn.style.visibility = 'hidden';
+        blueTurn.style.visibility = 'visible';
+
+    } else if (currentPlayer === 'player2Pieces') {
+        currentPlayer = 'player1Pieces';
+
+
+        const player2Pieces = document.querySelectorAll('.player2Pieces');
+        player2Pieces.forEach((piece) => {
+            piece.setAttribute('draggable', 'false');
+        });
+        const player1Pieces = document.querySelectorAll('.player1Pieces');
+        player1Pieces.forEach((piece) => {
+            piece.setAttribute('draggable', 'true');
+        });
+        yellowTurn.style.visibility = 'visible';
+        blueTurn.style.visibility = 'hidden';
     }
 }
