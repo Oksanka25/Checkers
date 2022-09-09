@@ -126,3 +126,118 @@ function drop(event) {
 
     }
 }
+
+function availableMove(startPosition, kingStr) {
+    moveOption1 = '';
+    moveOption2 = '';
+    moveOption3 = '';
+    moveOption4 = '';
+    let startChar = startPosition[0];
+
+    let nextLetter = String.fromCharCode(startChar.charCodeAt(0) + 1);
+    let prevLetter = String.fromCharCode(startChar.charCodeAt(0) - 1);
+    let nextNum = parseInt(startPosition[1], 10) + 1;
+    let prevNum = parseInt(startPosition[1], 10) - 1;
+
+    if (currentPlayer === 'player1Pieces' || kingStr === 'king') {
+        moveOption1 = nextLetter + nextNum;
+        if (lettersArr.includes(moveOption1[0]) && numArr.includes(moveOption1[1])) {
+            if (obstructionCheck(moveOption1)) {
+                if (document.getElementById(moveOption1).lastChild.className === currentPlayer) {
+                    moveOption1 = '';
+                } else {
+                    let nextLetter = String.fromCharCode(moveOption1.charCodeAt(0) + 1);
+                    let nextNum = parseInt(moveOption1[1], 10) + 1;
+                    moveOption1 = nextLetter + nextNum;
+                    if (lettersArr.includes(moveOption1[0]) && numArr.includes(moveOption1[1])) {
+                        if (obstructionCheck(moveOption1)) {
+                            moveOption1 = '';
+                        }
+                    }
+                }
+            }
+        } else {
+            moveOption1 = '';
+        }
+    }
+
+    if (currentPlayer === 'player1Pieces' || kingStr === 'king') {
+        moveOption2 = prevLetter + nextNum;
+        if (lettersArr.includes(moveOption2[0]) && numArr.includes(moveOption2[1])) {
+            if (obstructionCheck(moveOption2)) {
+                if (document.getElementById(moveOption2).lastChild.className === currentPlayer) {
+                    moveOption2 = '';
+                } else {
+                    let prevLetter = String.fromCharCode(moveOption2.charCodeAt(0) - 1);
+                    let nextNum = parseInt(moveOption2[1], 10) + 1;
+                    moveOption2 = prevLetter + nextNum;
+                    if (lettersArr.includes(moveOption2[0]) && numArr.includes(moveOption2[1])) {
+                        if (obstructionCheck(moveOption2)) {
+                            moveOption2 = '';
+                        }
+                    }
+                }
+            }
+        } else {
+            moveOption2 = '';
+        }
+    }
+
+    if (currentPlayer === 'player2Pieces' || kingStr === 'king') {
+        moveOption3 = nextLetter + prevNum;
+        if (lettersArr.includes(moveOption3[0]) && numArr.includes(moveOption3[1])) {
+            if (obstructionCheck(moveOption3)) {
+                if (document.getElementById(moveOption3).lastChild.className === currentPlayer) {
+                    moveOption3 = '';
+                } else {
+                    let nextLetter = String.fromCharCode(moveOption3.charCodeAt(0) + 1);
+                    let prevNum = parseInt(moveOption3[1], 10) - 1;
+                    moveOption3 = nextLetter + prevNum;
+                    if (lettersArr.includes(moveOption3[0]) && numArr.includes(moveOption3[1])) {
+                        if (obstructionCheck(moveOption3)) {
+                            moveOption3 = '';
+                        }
+                    }
+                }
+            }
+        } else {
+            moveOption3 = '';
+        }
+    }
+
+    if (currentPlayer === 'player2Pieces' || kingStr === 'king') {
+        moveOption4 = prevLetter + prevNum;
+        if (lettersArr.includes(moveOption4[0]) && numArr.includes(moveOption4[1])) {
+            if (obstructionCheck(moveOption4)) {
+                if (document.getElementById(moveOption4).lastChild.className === currentPlayer) {
+                    moveOption4 = '';
+                } else {
+                    let prevLetter = String.fromCharCode(moveOption4.charCodeAt(0) - 1);
+                    let prevNum = parseInt(moveOption4[1], 10) - 1;
+                    moveOption4 = prevLetter + prevNum;
+                    if (lettersArr.includes(moveOption4[0]) && numArr.includes(moveOption4[1])) {
+                        if (obstructionCheck(moveOption4)) {
+                            moveOption4 = '';
+                        }
+                    }
+                }
+            }
+        } else {
+            moveOption4 = '';
+        }
+    }
+
+    if (lettersArr.includes(moveOption1[0])) {
+        document.getElementById(moveOption1).style.filter = "brightness(400%)";
+    }
+    if (lettersArr.includes(moveOption2[0])) {
+        document.getElementById(moveOption2).style.filter = "brightness(400%)";
+    }
+    if (lettersArr.includes(moveOption3[0])) {
+        document.getElementById(moveOption3).style.filter = "brightness(400%)";
+    }
+    if (lettersArr.includes(moveOption4[0])) {
+        document.getElementById(moveOption4).style.filter = "brightness(400%)";
+    }
+
+}
