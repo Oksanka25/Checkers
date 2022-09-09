@@ -74,3 +74,18 @@ function resetGame() {
         tile.style.filter = "brightness(100%)";
     })
 }
+
+
+// Grabbing the start place of the player's checker 'upon 'picking up' a piece. e.g. B3 or E4. 
+function dragStart(event) {
+    kingStr = '';
+    event.dataTransfer.setData("text", event.target.id);
+    startPosition = event.path[1].id;
+    let playerSelection = event.srcElement.className;
+
+    if (playerSelection.includes('king')) {
+        kingStr = 'king';
+    }
+    availableMove(startPosition, kingStr);
+}
+
