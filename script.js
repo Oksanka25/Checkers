@@ -241,3 +241,12 @@ function availableMove(startPosition, kingStr) {
     }
 
 }
+
+function obstructionCheck(moveOption) {
+    let obstruction = document.getElementById(moveOption).lastChild;
+    if (obstruction !== null) {
+        return true;
+    } else {
+        return false;
+    }
+}
