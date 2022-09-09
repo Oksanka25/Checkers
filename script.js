@@ -1,4 +1,4 @@
-// DOM variables
+// DOM elements
 let yellowTurn = document.querySelector('.yellow-turn');
 let blueTurn = document.querySelector('.blue-turn');
 let player1 = document.querySelectorAll('.player1');
@@ -22,6 +22,11 @@ let p1checkers = 12;
 let p2checkers = 12;
 let multiJump = false;
 let kingStr = '';
+
+let moveSound = new Howl({
+    src: ['/sound/move.wav'],
+    volume: .5
+});
 
 
 
@@ -67,8 +72,6 @@ function resetGame() {
         i = 0;
     });
     currentPlayer = 'player1Pieces';
-    // p1checkers = 12;
-    // p2checkers = 12;
     player1count.innerText = 12;
     player2count.innerText = 12;
     if (document.getElementById('winner') !== null) {
@@ -135,6 +138,7 @@ function drop(event) {
         turnToggle();
 
     }
+    moveSound.play()
 }
 
 //Checks to see if a move was 1 diagonal length, or 2. The latter yielding a jump condition
