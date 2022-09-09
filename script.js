@@ -1,6 +1,6 @@
 // DOM variables
-let yellowTurn = document.querySelector('.yellowTurn');
-let blueTurn = document.querySelector('.blueTurn');
+let yellowTurn = document.querySelector('.yellow-turn');
+let blueTurn = document.querySelector('.blue-turn');
 let player1 = document.querySelectorAll('.player1');
 let player2 = document.querySelectorAll('.player2');
 let player1count = document.getElementById('p1checkers');
@@ -76,7 +76,7 @@ function resetGame() {
 }
 
 
-// Grabbing the start-place of the player's checker 'upon 'picking up' a piece. e.g. b3
+// Grabbing the start-place of the player's checker upon 'picking up' a piece. e.g. b3
 function dragStart(event) {
     kingStr = '';
     event.dataTransfer.setData("text", event.target.id);
@@ -89,7 +89,7 @@ function dragStart(event) {
     availableMove(startPosition, kingStr);
 }
 
-// Grabbing the end-place of the player's checker upon 'dropping'e.g. a4
+// Grabbing the end-place of the player's checker upon 'dropping' e.g. a4
 function drop(event) {
     let data = event.dataTransfer.getData("text");
     endPosition = event.path[0].id;
