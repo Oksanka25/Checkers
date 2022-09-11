@@ -99,11 +99,15 @@ function dragStart(event) {
     event.dataTransfer.setData("text", event.target.id);
     startPosition = event.path[1].id;
     let playerSelection = event.srcElement.className;
-    event.target.style.border = '2px solid red';
-    setTimeout(
-        function () {
-            event.target.style.border = 'none';
-        }, 1500);
+    // event.target.style.border = '2px solid red';
+    // setTimeout(
+    //     function () {
+    //         if (kingStr === 'king') {
+    //             event.target.style.border = '7px solid orange;'
+    //         } else {
+    //             event.target.style.border = 'none';
+    //         }
+    //     }, 1500);
 
     if (playerSelection.includes('king')) {
         kingStr = 'king';
