@@ -7,6 +7,8 @@ let player1count = document.getElementById('p1checkers');
 let player2count = document.getElementById('p2checkers')
 let p1text = document.getElementById('player1text');
 let p2text = document.getElementById('player2text');
+let pl1Score = document.querySelector('.pl1score');
+let pl2Score = document.querySelector('.pl2score');
 
 
 // Global variables
@@ -235,16 +237,24 @@ function findAndRemove(startPosition, endPosition) {
     if (p1checkers === 0) {
         scoreB();
         winSound.play();
+        p1text.style.visibility = 'visible';
+        p2text.style.visibility = 'visible';
         const newPrgrph = document.createElement('p');
-        newPrgrph.id = 'winner';
+        newPrgrph.className = 'winner';
+        newPrgrph.style.setProperty('--animate-duration', '2s');
+        newPrgrph.classList.add('animate__animated', 'animate__lightSpeedInLeft');
         const textNode = document.createTextNode('Player 2 (B) Wins!');
         newPrgrph.appendChild(textNode);
         document.body.appendChild(newPrgrph);
     } else if (p2checkers === 0) {
         scoreY();
         winSound.play();
+        p1text.style.visibility = 'visible';
+        p2text.style.visibility = 'visible';
         const newPrgrph = document.createElement('p');
-        newPrgrph.id = 'winner';
+        newPrgrph.className = 'winner';
+        newPrgrph.style.setProperty('--animate-duration', '2s');
+        newPrgrph.classList.add('animate__animated', 'animate__lightSpeedInLeft');
         const textNode = document.createTextNode('Player 1 (Y) Wins!');
         newPrgrph.appendChild(textNode);
         document.body.appendChild(newPrgrph);
@@ -538,10 +548,10 @@ function multiJumpAvailableMove(startPosition, kingStr) {
 
 function scoreY() {
     p1Wins++;
-    p1text.innerHTML = p1Wins;
+    pl1Score.innerHTML = p1Wins;
 }
 
 function scoreB() {
     p2Wins++;
-    p2text.innerHTML = p2Wins;
+    pl2Score.innerHTML = p2Wins;
 }

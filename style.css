@@ -233,12 +233,12 @@ button:active {
     font-weight: bold;
 }
 
-#winner {
+.winner {
     font-size: 100px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: red;
     position: absolute;
-    width: 700px;
+    width: 500px;
     height: 300px;
     top: 350px;
     display: flex;
@@ -246,6 +246,7 @@ button:active {
     font-weight: bold;
     text-shadow: 5px 5px 5px black;
 }
+
 
 .king {
     border: 7px solid rgb(211, 95, 32);
