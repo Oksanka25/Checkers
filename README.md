@@ -1,15 +1,24 @@
 # Checkers
 Browser-based game - Checkers 
 
+## Play here
+[Play Checkers](https://oksanka25.github.io/Checkers/)
+
 ## Project Description
 Checkers is a game played on a board checkered with squares of two colors. Two players compete in checkers to have the last piece on the board. The game pieces in checkers which you can also call checkers. The object of the game is to be the last player standing.  A player wins the game when his opponent can no longer make a move. This happens when all his opponent’s pieces have been captured or when all of his opponent’s pieces are blocked in.
 
 
-## Built with 
-This game is created using Javascript, HTML and CSS.
+## Built With 
+- HTML
+- CSS
+- Javascript
+- Grid
+
+## Author 
+[Oksana Kalyniak](https://github.com/Oksanka25)
 
 ## Layout
-The layout is a checkers board and score tracking table.
+The layout is a checkers board and moves tracking table.
 
 ## User Stories
 
@@ -21,22 +30,24 @@ The layout is a checkers board and score tracking table.
 - As a user, I should be able to win the game when the opponent cannot make a move
 
 
-## MVP Goals
+## Roadmap
 
-- Have a button Start that shows all checkers on the board.
-- Ability for each to user to move their checkers to the allowed tiles.
-- Block users from moving opponent's checkers.
-- Check for the winner when one of the players don't have any moves or checkers left.
-- Keep track the winning score for the players.
-- Show messages about allowed/forbidden moves and winning state. 
+- [x] Have a button Start that sets up all checkers on the board.
+- [x] Ability for each user to move their checkers to the allowed tiles.
+- [x] Block users from moving opponent's checkers.
+- [x] Check for the winner when one of the players don't have any moves or checkers left.
+- [x] Keep track the winning score for the players.
+- [x] Show messages about number of checkers left and a total winning score. 
 
-## Stretch Goals
-
-- Have move tips for players - the tiles where they can possibly move.
-- Add a 'King Me' option:
+- [x] (stretch) Have move tips for players - the tiles where they can possibly move.
+- [x] (stretch) Add a 'King' option:
 When a piece reaches a space in the row on the opposite side of the board (the “King Me” row), its player picks up the piece and crowns it by twisting its base counter-clockwise, then sets it back on its space.  It is now a King!  Kings are move powerful than pieces because they can move diagonally forward and backwards. Kings may combine jumps in several directions–forward and backward–on the same turn. 
-- Add a jumping move option: 
+- [ ] (stretch) Add a jumping move option: 
 A piece makes a jump by diagonally leaping over one of the opponent’s pieces and landing on the empty space on the other side (there must be an empty space to land on).  Multiple jumps are allowed on a single turn. When a piece is jumped (“captured”), it is removed from the board and is now out of play.
 
 ## Screenshots
-<img width="996" alt="Screen Shot 2022-09-02 at 10 38 18 AM" src="https://user-images.githubusercontent.com/101350351/188173581-5c48394a-c141-4eac-a77a-03f99c8f3a7e.png">
+
+<img width="1184" alt="Screen Shot 2022-09-11 at 5 58 18 PM" src="https://user-images.githubusercontent.com/101350351/189552531-d8449a46-35a8-4d3d-a0fa-bff1046c1ff1.png">
+<img width="1180" alt="Screen Shot 2022-09-11 at 5 59 08 PM" src="https://user-images.githubusercontent.com/101350351/189552543-db5c7e41-234d-4711-b22d-3e2147d96df1.png">
+<img width="1092" alt="Screen Shot 2022-09-11 at 6 55 27 PM" src="https://user-images.githubusercontent.com/101350351/189552556-c61b5457-66b7-4842-967f-fe3aa34714e4.png">
+
