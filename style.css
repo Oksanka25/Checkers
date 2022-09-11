@@ -252,3 +252,53 @@ button:active {
     border: 7px solid rgb(211, 95, 32);
     border-radius: 50%;
 }
+
+
+#modal {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+    display: none;
+}
+
+#modal-textbox {
+    background-color: rgb(238, 232, 232);
+    height: 40%;
+    width: 50%;
+    max-width: 30rem;
+    border-radius: 4px;
+    margin: 35rem auto;
+    margin-right: 39%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 2;
+    position: relative;
+    pointer-events: none;
+}
+
+/* background image opacity source: https://coder-coder.com/background-image-opacity/ */
+
+#modal-textbox::before {
+    content: "";
+    background-image: url("https://is4-ssl.mzstatic.com/image/thumb/Purple60/v4/78/90/cd/7890cd24-de04-6601-63ac-a6d10a9c888a/source/512x512bb.jpg");
+    background-size: contain;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#close {
+    width: 100%;
+    height: 100%;
+}

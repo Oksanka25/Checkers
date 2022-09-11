@@ -104,6 +104,40 @@
     <div class="startGame">
         <button onclick="startGame()">START</button>
         <button onclick="resetGame()">CLEAR</button>
+        <button onclick="" class="rules button" id="openModal">RULES</button>
+    </div>
+    <div id="modal">
+        <div id="close">
+            <div id="modal-textbox">
+                <h3>Checkers Rules</h3>
+                <p> <strong> Game Play </strong> <br>
+                    Checkers is played by two players.
+                    Each player begins the game with 12 discs and places them on the 12 dark squares closest to him or
+                    her. Yellow opens the game, then players alternate their turns.
+                    <strong> Move </strong>
+                    <br>
+                    The pieces always move diagonally and single pieces are always limited to forward moves. A piece
+                    making a non-capturing move may move only one square.
+                    <br>
+                    <strong> Capture </strong>
+                    <br>
+                    To capture a piece of your opponent, your piece leaps over one of the opponent's pieces and lands in
+                    a straight diagonal line on the other side. This landing square must be empty. When a piece is
+                    captured, it is removed from the board. Only one piece may be captured in a single jump, but
+                    multiple jumps are allowed on a single turn.
+                    <br>
+                    <strong>Upgrade a piece to a King</strong>
+                    <br>
+                    When a piece reaches the furthest row, it is crowned and becomes a king. Kings are limited to moving
+                    diagonally but can move both forward and backward.
+                    <strong>End of the Game</strong>
+                    <br>
+                    A player wins the game when the opponent cannot make a move.
+                    This happens usually because all of the opponent's pieces have been captured, but it could also be
+                    because all of his pieces are blocked in.
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 

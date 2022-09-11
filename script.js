@@ -1,14 +1,18 @@
 // DOM elements
-let yellowTurn = document.querySelector('.yellow-turn');
-let blueTurn = document.querySelector('.blue-turn');
-let player1 = document.querySelectorAll('.player1');
-let player2 = document.querySelectorAll('.player2');
-let player1count = document.getElementById('p1checkers');
-let player2count = document.getElementById('p2checkers')
-let p1text = document.getElementById('player1text');
-let p2text = document.getElementById('player2text');
-let pl1Score = document.querySelector('.pl1score');
-let pl2Score = document.querySelector('.pl2score');
+const yellowTurn = document.querySelector('.yellow-turn');
+const blueTurn = document.querySelector('.blue-turn');
+const player1 = document.querySelectorAll('.player1');
+const player2 = document.querySelectorAll('.player2');
+const player1count = document.getElementById('p1checkers');
+const player2count = document.getElementById('p2checkers')
+const p1text = document.getElementById('player1text');
+const p2text = document.getElementById('player2text');
+const pl1Score = document.querySelector('.pl1score');
+const pl2Score = document.querySelector('.pl2score');
+
+const openBtn = document.getElementById("openModal");
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close');
 
 
 // Global variables
@@ -39,7 +43,16 @@ let winSound = new Howl({
     volume: .5
 });
 
+const openRules = () => {
+    modal.style.display = "block";
+};
 
+const closeRules = () => {
+    modal.style.display = "none";
+    console.log("close");
+}
+openBtn.addEventListener("click", openRules)
+closeBtn.addEventListener("click", closeRules)
 
 
 // Creating checkers (pieces) for each player with unique ids and classes, adding dragging attributes
