@@ -1,8 +1,7 @@
 # Checkers
 Browser-based game - Checkers 
 
-## Play here
-[Play Checkers](https://checkers-by-ok.netlify.app/)
+[ ## Play Checkers ](https://checkers-by-ok.netlify.app/)
 
 ## Project Description
 Checkers is a game played on a board checkered with squares of two colors. Two players compete in checkers to have the last piece on the board. The game pieces in checkers which you can also call checkers. The object of the game is to be the last player standing.  A player wins the game when his opponent can no longer make a move. This happens when all his opponent’s pieces have been captured or when all of his opponent’s pieces are blocked in.
