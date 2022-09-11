@@ -99,6 +99,11 @@ function dragStart(event) {
     event.dataTransfer.setData("text", event.target.id);
     startPosition = event.path[1].id;
     let playerSelection = event.srcElement.className;
+    event.target.style.border = '2px solid red';
+    setTimeout(
+        function () {
+            event.target.style.border = 'none';
+        }, 1500);
 
     if (playerSelection.includes('king')) {
         kingStr = 'king';
@@ -116,6 +121,7 @@ function drop(event) {
     event.preventDefault();
     let data = event.dataTransfer.getData("text");
     endPosition = event.path[0].id;
+
     if (document.getElementById(data).className === 'player1Pieces') {
         if (endPosition[1] === '8') {
             const kingPiece = document.getElementById(data);
