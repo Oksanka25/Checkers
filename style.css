@@ -9,6 +9,7 @@ body {
     grid-template-columns: 200px 1fr 200px;
     justify-content: center;
     justify-items: center;
+    margin-top: 0%;
 }
 
 a {
