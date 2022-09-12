@@ -190,7 +190,7 @@ function findAndRemove(startPosition, endPosition) {
     jumpPosition = "";
     let startCharIndex = lettersArr.indexOf(startPosition[0]);
     let endCharIndex = lettersArr.indexOf(endPosition[0]);
-    let whichPlayerToReduce = '';
+    // let whichPlayerToReduce = '';
     // up-right 
     if (endCharIndex > startCharIndex && endPosition[1] > startPosition[1]) {
         jumpPosition += lettersArr[endCharIndex - 1];
