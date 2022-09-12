@@ -15,12 +15,13 @@ a {
     text-decoration: none;
 }
 
-h1 {
+h2 {
     display: grid;
     grid-row: 1;
     grid-column: 2;
     margin: auto;
-    font-size: 83px;
+    font-size: 63px;
+    margin-top: 3px;
 }
 
 button {
@@ -102,8 +103,8 @@ button:active {
     grid-column: 2;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    width: 600px;
-    height: 600px;
+    width: 585px;
+    height: 585px;
     border: 7px solid rgb(153, 44, 4);
     box-shadow: 5px 5px 15px 10px rgb(0, 0, 0);
     max-width: 700px;
@@ -233,7 +234,7 @@ button:active {
 
 #p2checkers,
 #p1checkers {
-    font-size: 45px;
+    font-size: 35px;
     color: rgb(83, 195, 70);
     font-weight: bold;
 }
@@ -353,12 +354,12 @@ button:active {
     }
 
     /* Header */
-    h1 {
+    h2 {
         display: grid;
         grid-row: 1;
         grid-column: 2;
         margin: auto;
-        font-size: 50px;
+        font-size: 47px;
     }
 
     .header {
@@ -456,7 +457,7 @@ button:active {
     }
 
     /* Header */
-    h1 {
+    h2 {
         display: grid;
         grid-row: 1;
         grid-column: 2;
@@ -573,7 +574,7 @@ button:active {
     }
 
     /* Header */
-    h1 {
+    h2 {
         display: grid;
         grid-row: 1;
         grid-column: 2;
