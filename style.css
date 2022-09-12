@@ -310,7 +310,7 @@ button:active {
 
 .footer {
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 120%;
     height: 40px;
@@ -413,8 +413,8 @@ button:active {
         background-color: rgb(82, 181, 223);
         width: 70px;
         height: 100px;
-        margin-top: 40px;
-        margin-bottom: 120%;
+        margin-top: 80%;
+        margin-bottom: 80%;
         border-radius: 20%;
     }
 
@@ -422,7 +422,7 @@ button:active {
         background-color: rgb(252, 245, 95);
         width: 70px;
         height: 100px;
-        margin-top: 20px;
+        margin-top: 10px;
         border-radius: 20%;
     }
 }
@@ -528,7 +528,7 @@ button:active {
         background-color: rgb(82, 181, 223);
         width: 50%;
         height: 140%;
-        margin: 20px;
+        margin: 10% 5%;
         /* margin-top: 40px;
         margin-bottom: 120%; */
         border-radius: 20%;
@@ -538,6 +538,7 @@ button:active {
         background-color: rgb(252, 245, 95);
         width: 50%;
         height: 140%;
+        margin: 10% 5%;
         /* width: 70px;
         height: 100px; */
         /* margin-top: 20px; */
@@ -552,7 +553,7 @@ button:active {
         /* background-color: rgb(123, 120, 212); */
         background-image: url("https://wallpaperaccess.com/full/279547.jpg");
         margin-right: 3%;
-        margin-left: 1%;
+        margin-left: 3%;
         display: grid;
         grid-template-rows: 120px 1fr 60px 30px;
         grid-template-columns: 40px 300px 50px;
@@ -611,7 +612,7 @@ button:active {
         grid-column: 2;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        width: 350px;
+        width: 320px;
         height: 350px;
         border: 7px solid rgb(153, 44, 4);
         box-shadow: 5px 5px 15px 10px rgb(0, 0, 0);
@@ -644,7 +645,7 @@ button:active {
         background-color: rgb(82, 181, 223);
         width: 50%;
         height: 140%;
-        margin: 20px;
+        margin: 10% 5%;
         /* margin-top: 40px;
         margin-bottom: 120%; */
         border-radius: 20%;
@@ -654,6 +655,7 @@ button:active {
         background-color: rgb(252, 245, 95);
         width: 50%;
         height: 140%;
+        margin: 10% 5%;
         /* width: 70px;
         height: 100px; */
         /* margin-top: 20px; */
